@@ -19,6 +19,8 @@ fn main() {
         cycle: 0,
     };
     let sources = [s_1, s_2, s_3];
+
+
     let p1_1 = Pipe {
         input: None,
         curr: None,
@@ -32,6 +34,7 @@ fn main() {
         curr: None,
     };
     let pipe_triplet_1: [Box<dyn IsPipe>; 3] = [Box::new(p1_1), Box::new(p1_2), Box::new(p1_3)];
+
     let p2_1 = Pipe {
         input: None,
         curr: None,
@@ -53,10 +56,13 @@ fn main() {
     let pipe_triplet_2: [Box<dyn IsPipe>; 3] = [Box::new(p2_1), Box::new(p2_2), Box::new(p2_3)];
 
     let pipes = vec![pipe_triplet_1, pipe_triplet_2];
+
+
     let sink = Sink {
         input: None,
         output_vec: Vec::new(),
     };
+    
 
     let mut tmr_sys = TMRSystem {
         sources,
